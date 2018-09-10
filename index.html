@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body background="background.png">
+<h1 id="content" style="color: #fff785;  position: absolute; top: 30%; font-size: 6em;">DOREK</h1>
+<script>
+$.get("https://raw.githubusercontent.com/lstypka/funny-quotes/master/fortunes/funnyquotes", function(response) { 
+   var splitResponse = response.split("\n");
+   var content = "";
+   while(!content)
+   {
+    var index = Math.ceil(Math.random() * splitResponse.length);
+	content = splitResponse[index];
+   }
+  
+   document.getElementById("content").innerHTML = content;
+});
+</script>
+</body>
